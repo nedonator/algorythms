@@ -12,7 +12,7 @@ public class Main1 {
     }
 
     public static void f(Node n, Out out, int depth) {
-        if(n != null) {
+        if (n != null) {
             if (depth > out.depth) {
                 out.depth = depth;
                 out.n = n;
@@ -23,12 +23,13 @@ public class Main1 {
     }
 
     static Random random = new Random();
-    public static void randomTree(Node n, int leftBound, int rightBound, double p){
-        if(random.nextDouble() < p){
+
+    public static void randomTree(Node n, int leftBound, int rightBound, double p) {
+        if (random.nextDouble() < p) {
             n.left = new Node(leftBound, n.value);
             randomTree(n.left, leftBound, n.value, p - 1);
         }
-        if(random.nextDouble() < p){
+        if (random.nextDouble() < p) {
             n.right = new Node(n.value, rightBound);
             randomTree(n.right, n.value, rightBound, p - 1);
         }
